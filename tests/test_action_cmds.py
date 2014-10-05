@@ -1,43 +1,19 @@
 import sublime
 
-from Vintageous.tests import ViewTest
+import unittest
+
 from Vintageous.state import State
 from Vintageous.vi.utils import modes
 
 
-TESTS_YS = (
-    ('"', 'dog "cat" turkey'),
-    ('2', 'dog 2cat2 turkey'),
-    ('(', 'dog (cat) turkey'),
-    (')', 'dog ( cat ) turkey'),
-    ('[', 'dog [cat] turkey'),
-    (']', 'dog [ cat ] turkey'),
-    ('{', 'dog {cat} turkey'),
-    ('}', 'dog { cat } turkey'),
-    ('<foo>', 'dog <foo>cat</foo> turkey'),
-    )
+TESTS = ()
 
-
-class Test_ys(ViewTest):
-    def testAll_VisualMode(self):
-        for (i, data) in enumerate(TESTS_YS):
-
-            self.write('dog cat turkey')
-            self.clear_sel()
-            self.add_sel(self.R((0, 4), (0, 7)))
-            self.state.mode = modes.VISUAL
-
-            surround_with, expected = data
-            self.view.run_command('_vi_plug_ys', {'mode': modes.VISUAL,
-                                                   'surround_with': surround_with})
-
-            actual = self.view.substr(self.R(0, self.view.size()))
-            self.assertEqual(actual, expected, 'failed at {0}'.format(i))
-
-            self.erase_all()
-
+# =============================================================
+# you need to edit this test; it won't work like this
+# =============================================================
+class Test_sample(unittest.TestCase):
     def testAll_InternalNormalMode(self):
-        for (i, data) in enumerate(TESTS_YS):
+        for (i, data) in enumerate(TESTS):
 
             self.write('dog cat turkey')
             self.clear_sel()
@@ -52,63 +28,6 @@ class Test_ys(ViewTest):
             self.view.run_command('_vi_plug_ys', {'mode': modes.INTERNAL_NORMAL,
                                                    'surround_with': surround_with,
                                                    'motion': motion})
-
-            actual = self.view.substr(self.R(0, self.view.size()))
-            self.assertEqual(actual, expected, 'failed at {0}'.format(i))
-
-            self.erase_all()
-
-
-TESTS_CS = (
-    ('("', 'dog "cat" turkey'),
-    ('(2', 'dog 2cat2 turkey'),
-    ('([', 'dog [cat] turkey'),
-    ('(]', 'dog [ cat ] turkey'),
-    ('({', 'dog {cat} turkey'),
-    ('(}', 'dog { cat } turkey'),
-    )
-
-
-class Test_cs(ViewTest):
-    def testAll_InternalNormalMode(self):
-        for (i, data) in enumerate(TESTS_CS):
-
-            self.write('dog (cat) turkey')
-            self.clear_sel()
-            self.add_sel(self.R(5))
-            self.state.mode = modes.INTERNAL_NORMAL
-
-            replace_what, expected = data
-            self.view.run_command('_vi_plug_cs', {'mode': modes.INTERNAL_NORMAL,
-                                                   'replace_what': replace_what})
-
-            actual = self.view.substr(self.R(0, self.view.size()))
-            self.assertEqual(actual, expected, 'failed at {0}'.format(i))
-
-            self.erase_all()
-
-
-TESTS_DS = (
-    ('dog (cat) turkey', '(', 'dog cat turkey'),
-    ('dog ( cat ) turkey', '(', 'dog  cat  turkey'),
-    ('dog [cat] turkey', '[', 'dog cat turkey'),
-    ('dog {cat} turkey', '{', 'dog cat turkey'),
-    # ('dog <foo>cat</foo> turkey', '<foo>', 'dog cat turkey'),
-    )
-
-
-class Test_cs(ViewTest):
-    def testAll_InternalNormalMode(self):
-        for (i, data) in enumerate(TESTS_DS):
-
-            text, replace_what, expected = data
-            self.write(text)
-            self.clear_sel()
-            self.add_sel(self.R(5))
-            self.state.mode = modes.INTERNAL_NORMAL
-
-            self.view.run_command('_vi_plug_ds', {'mode': modes.INTERNAL_NORMAL,
-                                                   'replace_what': replace_what})
 
             actual = self.view.substr(self.R(0, self.view.size()))
             self.assertEqual(actual, expected, 'failed at {0}'.format(i))

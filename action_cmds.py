@@ -18,12 +18,7 @@ import re
 @plugins.register(seq='<C-.><C-.>', modes=(modes.NORMAL,))
 class ViDartOpenCommandPalette(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -38,12 +33,7 @@ class ViDartOpenCommandPalette(ViOperatorDef):
 @plugins.register(seq='<C-S-.><C-S-.>', modes=(modes.NORMAL,))
 class ViDartOpenBuildCommandPalette(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -58,12 +48,7 @@ class ViDartOpenBuildCommandPalette(ViOperatorDef):
 @plugins.register(seq='<C-S-.><C-S-.>', modes=(modes.NORMAL,))
 class ViDartOpenBuildCommandPalette(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -78,12 +63,7 @@ class ViDartOpenBuildCommandPalette(ViOperatorDef):
 @plugins.register(seq='<C-.><C-cr>', modes=(modes.NORMAL,))
 class ViDartSmartRun(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -95,12 +75,7 @@ class ViDartSmartRun(ViOperatorDef):
 @plugins.register(seq='<C-.><C-S-cr>', modes=(modes.NORMAL,))
 class ViDartUpdateSmartRun(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -114,12 +89,7 @@ class ViDartUpdateSmartRun(ViOperatorDef):
 @plugins.register(seq='<C-S-.><C-cr>', modes=(modes.NORMAL,))
 class ViDartSmartRunSecondary(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -133,12 +103,7 @@ class ViDartSmartRunSecondary(ViOperatorDef):
 @plugins.register(seq='<C-S-.><C-S-cr>', modes=(modes.NORMAL,))
 class ViDartSmartRunSecondary(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -153,12 +118,7 @@ class ViDartSmartRunSecondary(ViOperatorDef):
 @plugins.register(seq='<C-.><C-0>', modes=(modes.NORMAL,))
 class ViDartStopProcesses(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
@@ -172,12 +132,7 @@ class ViDartStopProcesses(ViOperatorDef):
 @plugins.register(seq='<C-.><C-o>', modes=(modes.NORMAL,))
 class ViDartShowOutputPanel(ViOperatorDef):
     def __init__(self, *args, **kwargs):
-        ViOperatorDef.__init__(self, *args, **kwargs)
-
-        self.scroll_into_view = False
-        self.updates_xpos = False
-        self.repeatable = False
-        self.motion_required = False
+        super().__init__(*args, **kwargs)
 
     def translate(self, state):
         cmd = {}
