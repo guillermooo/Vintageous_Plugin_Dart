@@ -1,0 +1,26 @@
+{
+	"name": "Vintageous_Plugin_Dart",
+	"include": {
+		"dev": [
+			["*.*", ["*builder.py",
+					 "*build.sh",
+					 "*.sublime-workspace",
+					 "*.sublime-project",
+					 "*.ps1",
+					 "*.hg*",
+					 "*manifest.json"]
+			],
+			["tests/*.py", []]
+		],
+		"release": [
+			["*.*", ["*builder.py",
+					 "*build.sh",
+					 "*.sublime-workspace",
+					 "*.sublime-project",
+					 "*.ps1",
+					 "*.hg*",
+					 "*manifest.json"]
+			]
+		]
+	}
+}
