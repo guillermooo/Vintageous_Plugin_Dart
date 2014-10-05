@@ -1,17 +1,12 @@
-Vintageous_Plugin_Dart
-==========================
-
 Experimental plugin for the [Sublime Text Dart package][dart_package].
 
 
-Installation
-============
+## Installation
 
 Installation at the moment must be done manually.
 
 
-Summary
-=======
+## Summary
 
 Command           | Action
 ----------------- | -----------------------------------------------
